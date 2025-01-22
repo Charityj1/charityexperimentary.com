@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="styles.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,7 +50,59 @@
             padding: 50px;
             text-align: center;
         }
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 50%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
 </style>
+<script>
+    function searchProducts() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+
+        products.forEach(product => {
+            const name = product.querySelector('h3').textContent.toLowerCase();
+            if (name.includes(query)) {
+                product.style.display = '';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+</script>
+
 </head>
 <body>
     <header>
@@ -70,31 +124,61 @@
     <section id="home" class="hero">
         <h2>Welcome to Our eCommerce Website</h2>
         <p>Your one-stop shop for all your needs!</p>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products..." oninput="searchProducts()">
+        </div>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>We are a leading eCommerce platform, dedicated to providing top-quali                ty products and exceptional customer service. Our mission is to make your shoppi                ng experience seamless and enjoyable.</p>
+        <p>We are a leading eCommerce platform, dedicated to providing top-quality products and exceptional customer service. Our mission is to make your shopping experience seamless and enjoyable.</p>
     </section>
 
     <section id="products">
         <h2>Our Products</h2>
-        <p>Explore a wide range of products tailored to your needs. From electro                nics to fashion, we have it all!</p>
+        <div class="products-grid">
+            <div class="product">
+                <h3>Product 1</h3>
+                <p>Price: $10</p>
+            </div>
+            <div class="product">
+                <h3>Product 2</h3>
+                <p>Price: $20</p>
+            </div>
+            <div class="product">
+                <h3>Product 3</h3>
+                <p>Price: $30</p>
+            </div>
+        </div>
     </section>
 
     <section id="services">
         <h2>Our Services</h2>
-        <p>We offer fast delivery, easy returns, and 24/7 customer support to en                sure your satisfaction.</p>
+        <p>We offer fast delivery, easy returns, and 24/7 customer support to ensure your satisfaction.</p>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Have questions or need assistance? Reach out to us via email at suppo                rt@ecommerce.com or call us at (123) 456-7890.</p>
+        <div class="form-container">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
     </section>
 
     <section id="career">
         <h2>Careers</h2>
-        <p>Join our team and be part of a dynamic and innovative environment. Ch                eck out our career opportunities and apply today!</p>
+        <div class="form-container">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Why You Want to Join Us" rows="5" required></textarea>
+                <input type="submit" value="Apply">
+            </form>
+        </div>
     </section>
 
     <footer>
