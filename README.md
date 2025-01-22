@@ -1,7 +1,7 @@
 # My eCommerce Website
 
 ## Overview
-Welcome to the repository for **My eCommerce Website**. This is a simple yet functional website designed for an online store. It includes pages for Home, About Us, Products, Services, Contact Us, and Careers. The website features responsive design and basic interactivity using HTML, CSS, and JavaScript.
+Welcome to the repository for **My eCommerce Website**. This is a simple yet functional website designed for an online store. It includes Home, About Us, Products, Services, Contact Us, and Careers pages. The website features responsive design and basic interactivity using HTML, CSS, and JavaScript.
 
 ---
 
@@ -18,7 +18,7 @@ Welcome to the repository for **My eCommerce Website**. This is a simple yet fun
    - Includes interactive filtering functionality.
 
 4. **Services Page**
-   - Highlights the core services offered, such as fast delivery and 24/7 support.
+   - Highlights the core services, such as fast delivery and 24/7 support.
 
 5. **Contact Us Page**
    - Features a user-friendly form for inquiries.
